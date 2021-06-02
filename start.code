@@ -1,0 +1,4 @@
+int a = sub(5, 2);
+print(a);
+
+

@@ -1,0 +1,69 @@
+global : program
+
+program : statement_full
+
+program : statement_full program'
+
+statement_full : IF ( expression ) { block }
+
+statement_full : IF ( expression ) { block } ELSE { block }
+
+statement_full : WHILE ( expression ) { block }
+
+statement_full : statement ;
+        
+block : statement_full
+
+block : statement_full block
+
+statement : expression
+
+statement : BREAK
+
+statement : CONTINUE
+
+statement : PRINT ( expression )
+
+statement : INT IDENTIFIER = expression
+
+statement : FLT IDENTIFIER = expression
+
+statement : IDENTIFIER = expression
+
+expression : expression SUM expression
+
+expression : expression SUB expression
+
+expression : expression MUL expression
+
+expression : expression DIV expression
+
+expression : expression != expression
+
+expression : expression == expression
+
+expression : expression >= expression
+
+expression : expression <= expression
+
+expression : expression > expression
+
+expression : expression < expression
+
+expression : expression AND expression
+
+expression : expression OR expressio
+
+expression : NOT expression
+
+expression : IDENTIFIER
+
+expression : const
+
+expression : ( expression )
+
+const : FLOAT
+
+const : INTEGER
+
+const : STRING
